@@ -7,7 +7,6 @@
 ![Go](https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go&logoColor=white)
 ![Architecture](https://img.shields.io/badge/Pattern-Worker_Pool-blue?style=for-the-badge)
 ![API](https://img.shields.io/badge/API-REST-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![No Dependencies](https://img.shields.io/badge/Dependencies-Stdlib_Only-lightgrey?style=for-the-badge)
 
 </div>
@@ -27,19 +26,19 @@ This project implements a **production-style concurrent job processing system** 
                           │              Go HTTP Server                 │
                           │                                             │
   POST /jobs  ──────────▶ │  ┌───────────┐    ┌──────────────────────┐  │
-                          │  │  Handler   │──▶ │   Job Queue (chan)   │  │
+                          │  │  Handler   │──▶ │   Job Queue (chan)   │ │
   GET /jobs/{id} ───────▶ │  └───────────┘    └──────────┬───────────┘  │
                           │                              │              │
                           │                    ┌─────────▼─────────┐    │
-                          │                    │    Worker Pool     │    │
+                          │                    │    Worker Pool    │    │
                           │                    │  ┌──┐ ┌──┐ ┌──┐   │    │
                           │                    │  │W1│ │W2│ │W3│   │    │
                           │                    │  └──┘ └──┘ └──┘   │    │
                           │                    └─────────┬─────────┘    │
                           │                              │              │
                           │                    ┌─────────▼─────────┐    │
-                          │                    │   Results Store    │    │
-                          │                    │   (sync.Map)       │    │
+                          │                    │   Results Store   │    │
+                          │                    │   (sync.Map)      │    │
                           │                    └───────────────────┘    │
                           └─────────────────────────────────────────────┘
 ```
@@ -233,12 +232,6 @@ Contributions are welcome! Feel free to fork and submit a pull request.
 3. Commit your changes — `git commit -m "Add job priority queue"`
 4. Push to the branch — `git push origin feature/job-priorities`
 5. Open a Pull Request
-
----
-
-## 📜 License
-
-This project is open-source under the [MIT License](LICENSE).
 
 ---
 
